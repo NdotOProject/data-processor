@@ -1,7 +1,7 @@
 /*
  * 
  */
-package com.noproject.data.result;
+package com.noproject.result;
 
 public final class DynamicResult<L, R> {
 

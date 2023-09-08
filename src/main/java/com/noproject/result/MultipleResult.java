@@ -1,7 +1,7 @@
 /*
  * 
  */
-package com.noproject.data.result;
+package com.noproject.result;
 
 public final class MultipleResult<OL, L, M, R, OR> {
 

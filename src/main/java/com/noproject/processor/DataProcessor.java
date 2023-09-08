@@ -1,9 +1,9 @@
-package com.noproject.data.processor;
+package com.noproject.processor;
 
-import com.noproject.data.result.Data;
-import com.noproject.data.result.Location;
-import com.noproject.data.result.DynamicResult;
-import com.noproject.data.result.MultipleResult;
+import com.noproject.result.Data;
+import com.noproject.result.Location;
+import com.noproject.result.DynamicResult;
+import com.noproject.result.MultipleResult;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -12,11 +12,10 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 
-public final class DataProcessor {
+public class DataProcessor {
 
     public static void main(String[] args) throws ClassNotFoundException {
 //        System.out.println(0>>>32);
-//        AtomicInteger
 //        float f0 = 11.1e0__1f,// 1F
 //                f1 = 1.f,// 1.F
 //                f2 = 1.2f,// 1.2F 
@@ -28,11 +27,13 @@ public final class DataProcessor {
 //         d = 1.e1 - 1;
 //        d = 1___11e0__1f;
 //        d = 1___11e0__1d;
-//        double d = 1_1.e00_1;
-//        float f = -1e-1_1f;
+        double d = 1e2;
+        float f = -1.e-1_1f;
+        f = .0e12f;// 0.0
+        f = 0.e12f;// 0.0
+        f = 0.0e12f;// 0.0
+//        System.out.println(Double.valueOf("10001"));
 //        int i = 1_1__1;
-//        System.out.println((byte) '+');
-//        
 //        System.out.println(d);
 //        System.out.println(f);
 //        System.out.println(i);
@@ -114,15 +115,15 @@ public final class DataProcessor {
 //        String s = "0x005F";
         long start, end;
         start = System.currentTimeMillis();
-
-//        System.out.println(NumberProcessor.isNumberCharacter('1'));
-//        System.out.println(Arrays.toString(NumberProcessor.toByteArray(String.valueOf(Long.MAX_VALUE))));
-//        System.out.println(NumberProcessor.isValidUnderscores(""));
-//        System.out.println(Arrays.toString(NumberProcessor.toByteArray("1_123")));
-//        System.out.println(NumberProcessor.isFloatingPointNumber("1_1.-1e-1_1"));
-//        System.out.println(NumberProcessor.isScientificNumber("-1e-1_1"));
+        System.out.println(Integer.valueOf("-1"));
+//        System.out.println(Math.pow(10, 2));
+//        System.out.println((char)('E' + 32));
+//        System.out.println(NumberProcessor.isNegativeNumber("-0.e012"));
         end = System.currentTimeMillis();
         System.out.println(end - start + "ms");
+//        System.out.println(".1e12".indexOf("."));
+//        System.out.println(NumberProcessor.isFloatingPointNumber("1_1.-1e-1_1"));
+//        System.out.println(NumberProcessor.isScientificNumber("-1e-1_1"));
 
     }
 }

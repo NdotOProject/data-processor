@@ -1,8 +1,9 @@
 /*
  *
  */
-package com.noproject.data.processor;
+package com.noproject.processor;
 
+import com.noproject.checker.StringChecker;
 import java.util.regex.Pattern;
 
 /**
@@ -14,7 +15,7 @@ public class LongProcessor {
     private static final Pattern NUMBER_PATTERN = Pattern.compile("^[-+]?[0-9]+");
 
     public static boolean isLessThanOrEqualMax(String value) {
-        if (StringProcessor.isNullOrHasWhiteSpace(value) == true) {
+        if (StringChecker.isNullOrHasWhiteSpace(value) == true) {
             return false;
         }
         if (value.startsWith("-") == true) {
@@ -34,7 +35,7 @@ public class LongProcessor {
     }
 
     public static boolean isGreatThanOrEqualMin(String value) {
-        if (StringProcessor.isNullOrHasWhiteSpace(value) == true) {
+        if (StringChecker.isNullOrHasWhiteSpace(value) == true) {
             return false;
         }
         if (value.startsWith("-") == false) {
